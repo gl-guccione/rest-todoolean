@@ -19,14 +19,15 @@
   <body>
     <h1>TO DO LIST</h1>
     <ul id="todo-list">
+
       <li class="list__element"><span class="list__text">ciao</span><span class="list__delete"><i class="fas fa-trash"></i></span></li>
 
     </ul>
 
     <!-- handlebars template for li -->
-    <script id="tv-shows-template" type="text/x-handlebars-template">
+    <script id="todo-list-template" type="text/x-handlebars-template">
 
-      <li class="list__element"><span class="list__text">{{text}}</span><span class="list__delete"><i class="fas fa-trash"></i></span></li>
+      <li class="list__element" id="{{id}}"><span class="list__text">{{text}}</span><span class="list__delete"><i class="fas fa-trash"></i></span></li>
 
     </script>
     <!-- /handlebars template for li -->
