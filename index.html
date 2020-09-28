@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To Do List</title>
+    <!-- link stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <!-- google fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap">
+    <!-- add jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- add handlebars -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>TO DO LIST</h1>
+    <ul id="todo-list">
+      <li class="list__element"><span class="list__text">ciao</span><span class="list__delete"><i class="fas fa-trash"></i></span></li>
+
+    </ul>
+
+    <!-- handlebars template for li -->
+    <script id="tv-shows-template" type="text/x-handlebars-template">
+
+      <li class="list__element"><span class="list__text">{{text}}</span><span class="list__delete"><i class="fas fa-trash"></i></span></li>
+
+    </script>
+    <!-- /handlebars template for li -->
+
+    <!-- add script.js -->
+    <script src="js/script.js" charset="utf-8"></script>
+  </body>
+</html>
