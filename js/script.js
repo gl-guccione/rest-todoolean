@@ -4,14 +4,42 @@
 
 // functions
 
+function addContent(string) {
+  if (string != "") {
+    $.ajax(
+      {
+        "url": "http://157.230.17.132:3023/todos",
+        "data": {
+          "text": string
+        },
+        "method": "POST",
+        "success": function(date, state) {
+          displayData(date);
+          $("#submit__text").val("");
+        },
+        "error": function() {
+          alert("error");
+        },
+      }
+    );
+  }
+}
+
 function displayData(date) {
 
   var source = $("#todo-list-template").html();
   var template = Handlebars.compile(source);
 
-  for (var i = 0; i < date.length; i++) {
-    
-    var html = template(date[i]);
+  if (date.length != undefined) {
+
+    for (var i = 0; i < date.length; i++) {
+      var html = template(date[i]);
+
+      $("#todo-list").append(html);
+    }
+
+  } else {
+    var html = template(date);
 
     $("#todo-list").append(html);
   }
@@ -37,6 +65,19 @@ function getData() {
 // script
 $(document).ready(function() {
 
+  $("#submit__text").val("");
+
   getData();
+
+
+  $("#submit__button").click(function() {
+    var inputValue = $("#submit__text").val();
+    addContent(inputValue);
+  });
+
+
+  $("#todo-list").on("click", ".list__delete", function() {
+    alert();
+  });
 
 });
