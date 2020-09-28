@@ -4,6 +4,23 @@
 
 // functions
 
+function deleteContent(elm) {
+  console.log(elm);
+  var id = elm.attr("id");
+  $.ajax(
+    {
+      "url": "http://157.230.17.132:3023/todos/" + id,
+      "method": "DELETE",
+      "success": function(date, state) {
+        elm.remove();
+      },
+      "error": function() {
+        alert("error");
+      },
+    }
+  );
+}
+
 function addContent(string) {
   if (string != "") {
     $.ajax(
@@ -77,7 +94,7 @@ $(document).ready(function() {
 
 
   $("#todo-list").on("click", ".list__delete", function() {
-    alert();
+    deleteContent($(this).parent());
   });
 
 });
